@@ -1,6 +1,6 @@
 const Card = ({ type, title, description, image, name, bio, socialLinks }) => {
   return (
-    <div className="bg-green-600 dark:bg-green-800 rounded-lg shadow-lg overflow-hidden hover:bg-purple-700 dark:hover:bg-purple-900 transition-all duration-300">
+    <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden hover:bg-gray-100 dark:hover:bg-gray-700 transition-all duration-300">
       {/* Image Section */}
       {image && (
         <div className="p-6 flex justify-center">
@@ -19,10 +19,10 @@ const Card = ({ type, title, description, image, name, bio, socialLinks }) => {
       <div className="p-6 text-center">
         {type === "profile" ? (
           <>
-            <h2 className="text-4xl font-extrabold text-white dark:text-gray-100">
+            <h2 className="text-4xl font-extrabold text-black dark:text-gray-100">
               {name}
             </h2>
-            <p className="mt-2 text-gray-100 dark:text-gray-300">{bio}</p>
+            <p className="mt-2 text-gray-700 dark:text-gray-300">{bio}</p>
             <div className="mt-4 flex space-x-4 justify-center">
               {socialLinks?.map((link, index) => (
                 <a
@@ -30,7 +30,7 @@ const Card = ({ type, title, description, image, name, bio, socialLinks }) => {
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-white dark:text-gray-100 hover:text-yellow-400 dark:hover:text-yellow-300 transition duration-300 text-2xl"
+                  className="text-black dark:text-gray-100 hover:text-yellow-400 dark:hover:text-yellow-300 transition duration-300 text-2xl"
                 >
                   {link.icon}
                 </a>
@@ -39,10 +39,10 @@ const Card = ({ type, title, description, image, name, bio, socialLinks }) => {
           </>
         ) : (
           <>
-            <h2 className="text-2xl font-bold text-white dark:text-gray-100">
+            <h2 className="text-2xl font-bold text-black dark:text-gray-100">
               {title}
             </h2>
-            <p className="mt-2 text-gray-100 dark:text-gray-300">
+            <p className="mt-2 text-gray-700 dark:text-gray-300">
               {description}
             </p>
           </>
