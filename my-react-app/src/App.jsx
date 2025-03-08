@@ -3,7 +3,7 @@ import './App.css';
 import Greeting from './Components/Greeting';
 import Card from './Components/Card';
 import Button from './Components/Button';
-import profileImage from './assets/profile.jpg'; // Import the local image
+import profileImage from './assets/profile.jpg';
 
 function App() {
   const currentTime = new Date();
@@ -23,44 +23,47 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-blue-100 to-purple-100 p-8">
+    <div className="min-h-screen bg-gradient-to-br from-green-50 to-green-100 p-8">
       <div className="max-w-4xl mx-auto">
+        {/* Greeting Component */}
         <Greeting name="Lauben" />
-        <p className="text-center text-xl mt-4 text-green-600 font-semibold italic">
+
+        <p className="text-center text-xl mt-4 text-green-600">
           {greetingMessage}
         </p>
-        <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {/* Default Card 1 */}
-          <Card
-            title="Welcome to My App"
-            description="This is a simple React app built with Vite and Tailwind CSS."
-          />
 
-          {/* Default Card 2 */}
-          <Card
-            title="Explore More"
-            description="Discover the power of React and Tailwind CSS in modern web development."
-          />
+        {/* Feature Cards Section */}
+        <div className="mt-8 text-center">
+          <h2 className="text-2xl font-semibold text-gray-800">App Features</h2>
+          <p className="text-gray-600">Explore the powerful features of this app</p>
+        </div>
 
-          {/* Default Card 3 */}
-          <Card
-            title="Amazing Features"
-            description="Unlock the full potential of React and Tailwind CSS with powerful tools for building modern, responsive, and dynamic web applications."
-          />
+        <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+          {/* Default Cards */}
+          <Card title="Welcome to My App" description="This is a simple React app built with Vite and Tailwind CSS." />
+          <Card title="Explore More" description="Discover the power of React and Tailwind CSS in modern web development." />
+          <Card title="Amazing Features" description="Create modern, responsive, and visually appealing web applications using the best of React and Tailwind CSS." />
 
           {/* Profile Card */}
           <Card
             type="profile"
             name="Shadia"
             bio="Frontend Developer | React Enthusiast"
-            image={profileImage} // Use the local image
+            image={profileImage}
             socialLinks={[
               { url: "https://twitter.com", icon: "🐦" },
               { url: "https://github.com", icon: "🐙" },
               { url: "https://linkedin.com", icon: "🔗" },
             ]}
           />
+
+          {/* New Feature Cards */}
+          <Card title="⚡ Fast Performance" description="Optimized for speed and efficiency using Vite." />
+          <Card title="🎨 Customizable Themes" description="Easily modify styles using Tailwind CSS." />
+          <Card title="📱 Mobile Friendly" description="Fully responsive design for all devices." />
+          <Card title="🔒 Secure" description="Built with security best practices." />
         </div>
+
         <div className="mt-8 flex justify-center">
           <Button text="Click Me" onClick={handleClick} />
         </div>
